@@ -9,9 +9,7 @@ let nombreMostrado = usuario || "invitado";
 
 console.log(nombreMostrado);
 
-// b) Usa && para mostrar un texto SOLO si una variable booleana
-//    "sesionIniciada" es true.
-// TODO
+// b) Usa && para mostrar un texto solo si una variable booleana
 
 let sesionIniciada = true;
 

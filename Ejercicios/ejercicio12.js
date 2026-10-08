@@ -1,6 +1,6 @@
 console.log("\n--- Ejercicio 12 ---");
 
-// a) Declara dos nÃºmeros y muestra el resultado de sumarlos,
+// a) Declara dos números y muestra el resultado de sumarlos,
 //    restarlos, multiplicarlos, dividirlos y el resto (%) entre ellos.
 // TODO
 
