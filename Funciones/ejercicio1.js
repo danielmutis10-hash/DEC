@@ -13,37 +13,31 @@ function multiplicar (a,b)
     return a*b;
 }
 
-let a = 0, b = 0;
 let opc = "";
-let x = "", y = "";
 
-x = Number(prompt("Dame un número para sumar \n:"));
-y = Number(prompt("Ahora otro número \n:"));
+let x = Number(prompt("Dame un número para sumar \n:"));
+let y = Number(prompt("Ahora otro número \n:"));
 
-do{
-    console.log("Que quieres hacer con los números?"
-                ,"\n+:sumar"
-                ,"\n-:Restar"
-                ,"\n*:Multiplicar"
-                ,"\n.:Salir");
-    opc = prompt(":");
 
-    switch(opc)
-    {
-    case "+":
-        console.log(sumar(x,y));
-        break;
-    case "-":
-        console.log(restar(x,y));
-        break;
-    case "*":
-        console.log(multiplicar(a,b));
-        break;
-    case ".":
-        console.log("Finalizado");
-        break;
-    }
-}while(opc != ".");
+opc = prompt("Que quieres hacer con los números? \n+:sumar \n-:Restar \n*:Multiplicar \n.:Salir");    
+
+switch(opc)
+{
+case "+":
+    console.log(sumar(x,y));
+    break;
+case "-":
+    console.log(restar(x,y));
+    break;
+case "*":
+    console.log(multiplicar(x,y));
+    break;
+case ".":
+    console.log("Finalizado");
+    break;
+}
+
+
 
 
 
