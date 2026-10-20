@@ -7,10 +7,10 @@ function calcularSalario() {
 
   let nuevoSalario = salario;
 
-  if (salario > 2000){
+  if (salario > 2000) {
     //si el salario se mantiene por encima de los 2000 o es superior no hacer nada
     nuevoSalario = salario;
-  } else if (salario >= 1000 && salario <= 2000){
+  } else if (salario >= 1000 && salario <= 2000) {
     // Si el salario está entre 1000 y 2000
     if (edad > 45) {
       // Mayor de 45, sube un 3%
@@ -34,11 +34,11 @@ function calcularSalario() {
   }
 
   // Mostrar el resultado en el documento de forma básica
-    let divResultado = document.getElementById("resultado");
-    divResultado.style.display = "block";//uso de css dentro del script
-    //uso de html para el final del script y que esté dentro del html
-    divResultado.innerHTML = "<h3>Resultado:</h3>" +
-        "<p><strong>Nombre completo:</strong> " + nombre + " " + apellidos + "</p>" +
-        "<p><strong>Edad:</strong> " + edad + " años</p>" +
-        "<p><strong>Salario recalculado:</strong> " + nuevoSalario + " €</p>";
+  let divResultado = document.getElementById("resultado");
+  divResultado.style.display = "block"; //uso de css dentro del script
+  //uso de html para el final del script y que esté dentro del html
+  divResultado.innerHTML = "<h3>Resultado:</h3>" +
+    "<p><strong>Nombre completo:</strong> " + nombre + " " + apellidos + "</p>" +
+    "<p><strong>Edad:</strong> " + edad + " años</p>" +
+    "<p><strong>Nuevo salario:</strong> " + nuevoSalario + " €</p>";
 }
