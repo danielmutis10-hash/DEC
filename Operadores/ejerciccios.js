@@ -10,41 +10,47 @@ NIVEL 1 — CONSOLIDACIÓN
 Ejercicio 1 — Precedencia aritmética
 -------------------------------------
 let resultado = 2 + 3 * 4 - (6 / 2); //Los valores adquiridos irán por precedencia de las reglas matemáticas
-console.log(resultado);
+console.log(resultado); //11
 
 ¿Qué valor se muestra? Justifica el orden de evaluación de los operadores.
 
+/*Primero irá con los parentesis ya que en el orden de jerarquia matemático, estos van antes que lo demás
+posteriormente irán las multiplicaciones y divisiones y luego las sumas y las restas*/
 
 Ejercicio 2 — Incremento/decremento
 -------------------------------------
-let x = 5;
-console.log(x++);
-console.log(x);
-console.log(++x);
+let x = 5; //Variable que cambia su valor en dependencia de un resultado, no es constante
+console.log(x++);//5
+console.log(x);//6
+console.log(++x);//7
 
 Explica la diferencia entre x++ y ++x, indicando qué imprime cada línea.
 
+/*La diferencia entre ++x y x++ es que uno altera el valor expuesto previamente antes de ser impreso en pantalla
+y el otro altera su valor despues de haber sido expuesto por pantalla*/
 
 Ejercicio 3 — Asignación compuesta
 -------------------------------------
-let saldo = 100;
-saldo += 50;
-saldo -= 30;
-saldo *= 2;
-console.log(saldo);
+let saldo = 100; 
+saldo += 50; // 100 + 50 = 150
+saldo -= 30; //150 - 30 = 120
+saldo *= 2; // 120 *2 = 240
+console.log(saldo); // 240 por pantalla
 
 Calcula el valor final sin ejecutar el código, después verifica el resultado.
 
 
 Ejercicio 4 — Operador módulo (resto)
 -------------------------------------
-let n = 7;
-let esPar = n % 2 === 0;
+let n = 7; //integer
+let esPar = n % 2 === 0; // cuando son dos = es una comparación de true o false
+//false
 console.log(esPar);
+//false
 
 let m = -4;
-let esParM = m % 2 === 0;
-console.log(esParM);
+let esParM = m % 2 === 0;//true 
+console.log(esParM);//true
 
 ¿Qué se muestra en cada console.log? ¿Por qué es útil el operador % en
 programación? Propón un caso de uso distinto al de comprobar paridad.
@@ -57,10 +63,10 @@ NIVEL 2 — APLICACIÓN
 
 Ejercicio 5 — Igualdad débil vs estricta
 -------------------------------------
-console.log(5 == "5");
-console.log(5 === "5");
-console.log(null == undefined);
-console.log(null === undefined);
+console.log(5 == "5"); //true
+console.log(5 === "5"); //false
+console.log(null == undefined); //true
+console.log(null === undefined); //false
 
 Predice cada resultado y explica por qué == produce coerción de tipo
 mientras que === no lo hace.
@@ -69,7 +75,7 @@ mientras que === no lo hace.
 Ejercicio 6 — Operadores lógicos y cortocircuito
 -------------------------------------
 let usuario = null;
-let nombre = usuario && "Ana";
+let nombre = usuario && "Ana"; //null
 console.log(nombre);
 
 let mensaje = "" || "Bienvenido";
@@ -85,7 +91,7 @@ let edad = 17;
 let tieneConsentimiento = true;
 
 let puedeRegistrarse = edad >= 18 || (edad >= 14 && tieneConsentimiento);
-console.log(puedeRegistrarse);
+console.log(puedeRegistrarse); //true
 
 Calcula el resultado paso a paso, indicando qué subexpresión se evalúa
 primero y por qué.

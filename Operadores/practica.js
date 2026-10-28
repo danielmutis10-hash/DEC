@@ -1,2 +1,5 @@
-let resultado = 2 + 3 * 4 - (6 / 2); //Los valores adquiridos irán por precedencia de las reglas matemáticas
-console.log(resultado);
+let edad = 17;
+let tieneConsentimiento = true;
+
+let puedeRegistrarse = edad >= 18 || (edad >= 14 && tieneConsentimiento);
+console.log(puedeRegistrarse);
