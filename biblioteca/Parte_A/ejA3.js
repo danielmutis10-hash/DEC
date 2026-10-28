@@ -37,7 +37,7 @@ for(const nota of notas)
         aprobados++
     }
 
-    if (notamax < nota)
+    if (notamax < nota && nota < 10)
     {
         notamax = nota;
     }
