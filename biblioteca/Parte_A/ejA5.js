@@ -27,3 +27,12 @@ const duplicados = transformar(numeros, n => n*2);
 const pares = quedarse(duplicados, n => n%2 === 0);
 
 console.log(pares);
+
+//Apartado 4 
+
+const resultado = numeros.map.filter(n => n % 2 === 0);
+
+console.log(resultado);
+
+/*Tanto las funciones como los metodos, actúan como funciones de orden superior ya que encapsulan la logica repetitiva de recorrer un array
+ y devolver uno nuevo el cual es independiente y al que se le pueden delegar reglas especificas de transformación o filtrado*/
