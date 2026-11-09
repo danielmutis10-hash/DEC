@@ -36,3 +36,16 @@ console.log(resultado);
 
 /*Tanto las funciones como los metodos, actúan como funciones de orden superior ya que encapsulan la logica repetitiva de recorrer un array
  y devolver uno nuevo el cual es independiente y al que se le pueden delegar reglas especificas de transformación o filtrado*/
+
+
+//Apartado 5
+
+const precios = [10 , 45, 8 , 99, 30];
+
+const totalConIva = precios
+  .filter(precio => precio > 10)//distingue precios que sean mayores que 10 sin incluirlo
+  .map(precio => precio * 1.21)//Aquellos valores que hemos obtenido son multiplicados con un 21% adicional
+  .reduce((acumulador, actual) => acumulador + actual, 0)//suma el valor actual a los productos
+  .toFixed(2);//redondea los decimales a solamente 2
+
+console.log(totalConIva);
