@@ -35,3 +35,28 @@ console.log(mediaAprobados(["7", 4, 5, 9.5, 3])); // Esperado: 7.17 aprox.
 
 
 //Apartado 3
+
+function mediaAprobados(notas) {
+    let suma = 0;
+    let contador = 0;
+    
+    for (let i = 0; i < notas.length; i++) {
+        // Convertimos a número por si vienen como string y verificamos si es mayor igual que 5
+        let notaActual = Number(notas[i]);
+        
+        if (notaActual >= 5) {
+            suma += notaActual;
+            contador++;
+        }
+    }
+    
+    // Si no hay aprobados, devuelve null
+    if (contador === 0) {
+        return null;
+    }
+    
+    // Dividimos la suma entre el número real de aprobados
+    return suma / contador;
+}
+
+console.log(mediaAprobados(["7", 4, 5, 9.5, 3]));
