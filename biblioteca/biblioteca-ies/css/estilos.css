@@ -24,3 +24,9 @@ section {
   padding: 1rem;
   margin-bottom: 1rem;
 }
+
+/*Los libros prestados son cambiados a rojo*/
+tr.prestado {
+  background-color: #fde8e8;
+  color: #9c0006;
+}
