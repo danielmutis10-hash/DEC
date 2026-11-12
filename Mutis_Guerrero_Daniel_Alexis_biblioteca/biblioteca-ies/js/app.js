@@ -74,7 +74,7 @@ function ranking(libros, n = 3) { //función para posicionar los libros
 }
 
 // R7
-function resumen(libros) {
+function resumen(libros) { //función que hace un resumen de todos los libros
   const total = libros.length;
   const prestados = libros.filter(libro => libro.prestado).length;
   const disponibles = total - prestados;
@@ -82,7 +82,7 @@ function resumen(libros) {
   const todasValoraciones = libros.flatMap(libro => libro.valoraciones);
   let mediaGlobal = null;
   if (todasValoraciones.length > 0) {
-    const sumaTotal = todasValoraciones.reduce((acum, val) => acum + val, 0);
+    const sumaTotal = todasValoraciones.reduce((acum, val) => acum + val, 0);//suma de las valoraciones
     mediaGlobal = Math.round((sumaTotal / todasValoraciones.length) * 10) / 10;
   }
 
