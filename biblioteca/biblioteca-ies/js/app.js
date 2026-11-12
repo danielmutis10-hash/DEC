@@ -17,52 +17,52 @@ function mostrar(selector, html) {
 
 // R1
 function valoracionMedia(libro) { //Da la media de cada uno de los libros
-  if (!libro.valoraciones || libro.valoraciones.length === 0) {
+  if (!libro.valoraciones || libro.valoraciones.length === 0) {//valida que hayan valoraciones sino devuelve null
     return null;
   }
   const suma = libro.valoraciones.reduce((acum, val) => acum + val, 0);
-  return Math.round((suma / libro.valoraciones.length) * 10) / 10;
+  return Math.round((suma / libro.valoraciones.length) * 10) / 10;//redondea los números ya que al dar un float, su valor en decimales se puede escapar a mas de 2
 }
 
 // R2
-function librosDisponibles(libros) {
-  return libros.filter(libro => !libro.prestado);
+function librosDisponibles(libros) { //devuelve los libros disponibles
+  return libros.filter(libro => !libro.prestado); //identifica que libro sea distinto de prestado o sea disponible
 }
 
 // R3
-function librosEntre(libros, desde, hasta) {
+function librosEntre(libros, desde, hasta) { //hace una selección de prestamo para ver desde que año a que año esta el libro
   const anioDesde = Number(desde);
   const anioHasta = Number(hasta);
 
-  if (Number.isNaN(anioDesde) || Number.isNaN(anioHasta) || anioDesde > anioHasta) {
+  if (Number.isNaN(anioDesde) || Number.isNaN(anioHasta) || anioDesde > anioHasta) {//valida que el año tenga valor o que el año desde sea mayor que el otro
     return [];
   }
 
-  return libros.filter(libro => libro.anio >= anioDesde && libro.anio <= anioHasta);
+  return libros.filter(libro => libro.anio >= anioDesde && libro.anio <= anioHasta); //filtra los libros con sus años
 }
 
 // R4
-function generos(libros) {
-  const generosSet = new Set(libros.map(libro => libro.genero));
-  return [...generosSet].sort((a, b) => a.localeCompare(b));
+function generos(libros) { //función que ordena los generos
+  const generosSet = new Set(libros.map(libro => libro.genero)); //se crea un set con solo los generos de libros
+  return [...generosSet].sort((a, b) => a.localeCompare(b)); //ordena los generos y localecompare ayuda a ordenarlo con tildes y ñ
 }
 
 // R5
-function librosPorAutor(libros) {
-  const mapaAutores = new Map();
-  libros.forEach(libro => {
-    const actual = mapaAutores.get(libro.autor) ?? 0;
-    mapaAutores.set(libro.autor, actual + 1);
+function librosPorAutor(libros) { //función para ordenar los libros de cada autor
+  const mapaAutores = new Map(); //un map de autores de los libros para que no se repitan
+  libros.forEach(libro => { //recorre todos los libros
+    const actual = mapaAutores.get(libro.autor) ?? 0; //identifica si el autor ya fue guardado anteriormente para no repetir
+    mapaAutores.set(libro.autor, actual + 1); 
   });
   return mapaAutores;
 }
 
 // R6
-function ranking(libros, n = 3) {
-  const copia = [...libros];
+function ranking(libros, n = 3) { //función para posicionar los libros 
+  const copia = [...libros]; //copia el array ordenado tal cual
   return copia
-    .filter(libro => libro.valoraciones && libro.valoraciones.length > 0)
-    .sort((a, b) => {
+    .filter(libro => libro.valoraciones && libro.valoraciones.length > 0) //elimina libros que no tienen valoraciones
+    .sort((a, b) => { //ordenamiento de los libros por la media de las valoraciones
       const mediaA = valoracionMedia(a);
       const mediaB = valoracionMedia(b);
       if (mediaB !== mediaA) {
@@ -70,7 +70,7 @@ function ranking(libros, n = 3) {
       }
       return a.titulo.localeCompare(b.titulo);
     })
-    .slice(0, n);
+    .slice(0, n); //corta el return quedandose solamente con los 3 primeros
 }
 
 // R7
