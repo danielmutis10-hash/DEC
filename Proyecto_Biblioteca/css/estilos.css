@@ -1,0 +1,190 @@
+/* ---------- Variables (paleta) ---------- */
+:root {
+  --color-principal: #1f4e79;
+  --color-texto: #222222;
+  --color-fondo: #f2f4f7;
+  --color-tarjeta: #ffffff;
+  --color-tarjeta-alterna: #f7f9fc;
+  --color-disponible: #2e7d32;
+  --color-prestado: #c62828;
+}
+
+/* ---------- Base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-padding-top: 8rem;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--color-texto);
+  background-color: var(--color-fondo);
+}
+
+/* ---------- Cabecera e índice (sticky + flex) ---------- */
+.cabecera {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 0.75rem 5%;
+  background-color: var(--color-principal);
+  color: #ffffff;
+}
+
+.cabecera-titulo {
+  margin: 0 0 0.5rem;
+  font-size: 1.75rem;
+}
+
+.indice {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+}
+
+.indice-enlace {
+  color: #ffffff;
+  font-size: 0.875rem;
+  text-decoration: none;
+  padding: 0.25rem 0.5rem;
+  border-bottom: 2px solid transparent;
+}
+
+.indice-enlace:hover,
+.indice-enlace:focus {
+  background-color: #ffffff;
+  color: var(--color-principal);
+  text-decoration: underline;
+  outline: none;
+}
+
+/* ---------- Contenido principal ---------- */
+.principal {
+  width: 90%;
+  max-width: 75rem;
+  margin: 1.5rem auto;
+}
+
+.panel {
+  padding: 1rem 1.5rem;
+  margin-bottom: 2rem;
+  background-color: var(--color-tarjeta);
+  border: 1px solid var(--color-principal);
+  border-radius: 0.75rem;
+}
+
+.panel-titulo {
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+  color: var(--color-principal);
+}
+
+.panel-lista {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.seccion {
+  margin-bottom: 2rem;
+  padding: 1rem;
+}
+
+.seccion-titulo {
+  margin: 0 0 1rem;
+  font-size: 1.75rem;
+  color: var(--color-principal);
+}
+
+.vacio {
+  font-style: italic;
+}
+
+/* ---------- Rejilla y tarjetas (flexbox) ---------- */
+.rejilla {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.tarjeta {
+  position: relative;
+  flex: 1 1 15rem;
+  max-width: 20rem;
+  padding: 1rem;
+  background-color: var(--color-tarjeta);
+  border: 2px solid var(--color-principal);
+  border-radius: 0.75rem;
+}
+
+.tarjeta:nth-child(even) {
+  background-color: var(--color-tarjeta-alterna);
+}
+
+.tarjeta:hover {
+  background-color: #e8eef6;
+}
+
+.tarjeta.disponible {
+  border-color: var(--color-disponible);
+}
+
+.tarjeta.prestado {
+  border-color: var(--color-prestado);
+}
+
+.tarjeta-titulo {
+  margin: 0 0 0.25rem;
+  font-size: 1.25rem;
+}
+
+.tarjeta-autor {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.tarjeta-datos {
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+.tarjeta-estado {
+  margin: 0.5rem 0 0;
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+
+.disponible .tarjeta-estado {
+  color: var(--color-disponible);
+}
+
+.prestado .tarjeta-estado {
+  color: var(--color-prestado);
+}
+
+/* Etiqueta «Prestado» (position: absolute) */
+.etiqueta {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  padding: 0.125rem 0.5rem;
+  font-size: 0.75rem;
+  color: #ffffff;
+  background-color: var(--color-prestado);
+  border-radius: 0.25rem;
+}
+
+/* ---------- Pie ---------- */
+.pie {
+  padding: 1rem 5%;
+  text-align: center;
+  font-size: 0.875rem;
+}
