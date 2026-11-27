@@ -22,14 +22,14 @@ html {
 
 body {
   margin: 0;
-  font-family: "Segoe UI", Arial, sans-serif;
+  font-family: Arial, sans-serif;
   font-size: 1rem;
   line-height: 1.5;
   color: var(--color-texto);
   background-color: var(--color-fondo);
 }
 
-/* ---------- Cabecera e índice (sticky + flex) ---------- */
+/* ---------- Cabecera e índice ---------- */
 .cabecera {
   position: sticky;
   top: 0;
@@ -107,7 +107,7 @@ body {
   font-style: italic;
 }
 
-/* ---------- Rejilla y tarjetas (flexbox) ---------- */
+/* ---------- Rejilla y tarjetas ---------- */
 .rejilla {
   display: flex;
   flex-wrap: wrap;
@@ -170,7 +170,7 @@ body {
   color: var(--color-prestado);
 }
 
-/* Etiqueta «Prestado» (position: absolute) */
+/* Etiqueta 'Prestado' (position: absolute) */
 .etiqueta {
   position: absolute;
   top: 0.5rem;
