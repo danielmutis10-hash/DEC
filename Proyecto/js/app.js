@@ -50,3 +50,42 @@ function pintarSeccion(titulo, lista){
     }
     contenedor.append(seccion);
 }
+
+function mostrarResultado(accion, libro, resultado){//funcion que muestra ek resultado del prestamo
+    const texto = resultado ? "correcto" : "no realizado (el libro se encontraba anteriormente en este estado)";
+    console.log(`${accion} "${libro.titulo}": ${texto}`);
+}
+
+function simularPrestamo(){
+    const quijote = catalogo.buscar("El Quijote")[0]; //busca su titulo dentro del propio libro
+    const regenta = catalogo.buscar("La Regenta")[0];
+    const colmena = catalogo.buscar("La colmena")[0];
+    const bernarda = catalogo.buscar("Bernarda Alba")[0];
+
+    mostrarResultado("Prestar", quijote, quijote.prestar());
+    mostrarResultado("Prestar", regenta, regenta.prestar());
+    mostrarResultado("Prestar", colmena, colmena.prestar());
+    mostrarResultado("Devolver", bernarda, bernarda.devolver());
+    mostrarResultado("Prestar (ya prestado)", quijote, quijote.prestar());
+}
+
+function pintarVistas(){
+    pintarSeccion("Catálogo completo", catalogo.ordenarPor("titulo"));
+    pintarSeccion("Libros disponibles", catalogo.filtrarPorDisponibilidad(true));
+    pintarSeccion("Libros prestados", catalogo.filtrarPorDisponibilidad(false));
+
+    for (const genero of catalogo.generos()){
+        pintarSeccion(`Género: ${genero}`, catalogo.filtrarPorGenero(genero));
+    }
+
+    pintarSeccion("Los 5 libros más antguos", catalogo.ordenarPor("anio").slice(0,5)); //filtra solo los 5 libros mas antiguos
+
+    const novelasDisponibles = catalogo
+        .filtrarPorGenero("novela")
+        .filter((libro) => libro.disponible)
+        .sort((a,b) => a.paginas - b.paginas);
+    pintarSeccion("Novelas disponibles ordenadas por páginas", novelasDisponibles);
+    
+    pintarSeccion(`Resultados de la búsqueda: "${TEXTO_BUSQUEDA}"`, catalogo.buscar(TEXTO_BUSQUEDA));
+}
+
