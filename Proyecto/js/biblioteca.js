@@ -42,7 +42,7 @@ export class Biblioteca{
     }
 
     buscar(texto){ //Buscar por nombre del autor o por el titulo que se ha buscado
-        const buscado = texto.toLowerCasse();
+        const buscado = texto.toLowerCase();
         return this.libros.filter( //filtrar la busqueda por titulo o autor de libros
             (libro) =>
                 libro.titulo.toLowerCase().includes(buscado) || 
@@ -81,7 +81,7 @@ export class Biblioteca{
     /*devuelve cantida de libros disponibles, prestados, media de paginas, libro más antiguo,
     y número de libros por genero*/
     estadisticas(){
-        const total = this.libros.length();
+        const total = this.libros.length;
         const disponibles = this.filtrarPorDisponibilidad(true).length;
         const totalPaginas = this.libros.reduce((suma, libro) => suma + libro.paginas, 0);
         const mediaPaginas = Math.round(totalPaginas/total);
@@ -89,7 +89,7 @@ export class Biblioteca{
             libro.anio < antiguo.anio ? libro : antiguo);
         const porGenero = new Map();
         for(const l of this.libros){
-            porGenero.set(l.genero, (porGenero.get(l.genero) || 0) = 1);
+            porGenero.set(l.genero, (porGenero.get(l.genero) || 0) + 1);
         } 
         return{
             total,

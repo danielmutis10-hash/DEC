@@ -13,47 +13,28 @@
         <div class="nav-left">
             <i class='bx bx-menu' id="menu-btn"></i>
         </div>
+
+        <form class="search-form" id="search-form"> <!-- Guarda la busqueda para buscarlo-->
+            <input type="text" id="search-input" placeholder="Buscar por título o autor...">
+            <button type="submit" aria-label="Buscar"><i class='bx bx-search'></i></button>
+        </form>
     </header>
 
     <aside class="sidebar" id="sidebar">
-        <nav class="sidebar-nav">
-            <a href="index.html" class="option">
-                <i class='bx bxs-home'></i><span>Inicio</span>
-            </a>
-            <a href="../REBAJAS/REBAJAS.html" class="option">
-                <i class='bx bx-purchase-tag'></i><span>Rebajas</span>
-            </a>
-            <a href="../TEMPORADA/TEMPORADA.html" class="option">
-                <i class='bx bx-calendar'></i><span>Temporada</span>
-            </a>
-            <a href="../CEREMONIA/CEREMONIA.html" class="option">
-                <i class='bx bx-star'></i><span>Ceremonia</span>
-            </a>
-            <a href="../CLASICO/CLASICO.html" class="option">
-                <i class='bx bx-crown'></i><span>Clásico</span>
-            </a>
-            <a href="../CRUZADO/CRUZADO.html" class="option">
-                <i class='bx bx-git-compare'></i><span>Cruzado</span>
-            </a>
-            <a href="../COMPLEMENTOS/COMPLEMENTOS.html" class="option">
-                <i class='bx bxs-component'></i><span>Complementos</span>
-            </a>
-            <a href="../CAMISAS/CAMISAS.html" class="option">
-                <i class='bx bxs-t-shirt'></i><span>Camisas</span>
-            </a>
-        </nav>
+        <nav class="sidebar-nav" id="sidebar-nav"></nav>
     </aside>
 
-    <main class="main-content">
-        <section class="card">
-            <h3>Más contenido</h3>
-        </section>
+    <main class="main-content" id="contenido">
+        <section class="section" id="estadisticas"></section>
     </main>
 
 
     <footer class="footer-final">
         <p>Proyecto DEC + DIW — 2º DAW</p>
     </footer>
+
+    <!--Integraciond e los scripts para el programa-->
     <script src="js/transition.js"></script>
+    <script type="module" src="js/app.js"></script>
 </body>
 </html>
